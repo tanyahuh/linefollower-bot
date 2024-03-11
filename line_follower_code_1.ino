@@ -49,13 +49,17 @@ int rightsensorpinv= digitalRead(rightsenorpin);
 
 }
 void motorrotation(leftspeed, rightspeed){
-  if (leftspeed>0){
+  if (rightspeed<0){
     digitalWrite(leftmotorpin1=HIGH);
     digitalWrite(rightmotorpin1=LOW);
   }
-  else if(rightspeed>0){
+  else if(leftspeed<0){
     
     digitalWrite(leftmotorpin=LOW);
+    digitalWrite(rightmotorpin=HIGH);
+  }
+  else if(leftspeed>0 && rightspeed>0){
+    digitalWrite(leftmotorpin=HIGH);
     digitalWrite(rightmotorpin=HIGH);
   }
   else{
